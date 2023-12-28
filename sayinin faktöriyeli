@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int faktoriyelHesapla(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * faktoriyelHesapla(n - 1);
+    }
+}
+
+int main() {
+    int sayi;
+    printf("Faktoriyelini hesaplamak istediginiz sayiyi girin: ");
+    scanf("%d", &sayi);
+
+    if (sayi < 0) {
+        printf("Negatif sayilarin faktoriyeli hesaplanamaz.\n");
+    } else {
+        int faktoriyel = faktoriyelHesapla(sayi);
+        printf("%d! = %d\n", sayi, faktoriyel);
+    }
+
+    return 0;
+}
